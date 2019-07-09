@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Simple Turrets</name>
+  <author>Neceros</author>
+<supportedVersions><li>1.0</li></supportedVersions>  
+<description>
+Adds 8 unique turrets all meticulously designed for vanilla Rimworld, each with a specific role in mind. Three additional research projects are provided for the turrets. All eight turrets are reinstallable.
+
+Add it to an existing save. It will work just fine. Won't conflict with any other mods.
+
+
+[b]Here are the vanilla turrets for comparison:[/b]
+
+[b]Mini-Turret[/b]
+Range: 25
+Damage: 10 x3 shot burst
+Explodes: 4 squares
+Power Needed: 80
+Materials Needed: 40 steel, 60 metal, 3 components
+
+[b]Autocannon[/b]
+Range: 33
+Minimum Range: 9
+Damage: 40 x3 shot burst
+Explodes: 6 squares
+Power Needed: 150
+Materials Needed: 350 steel, 40 plasteel, 3 components
+
+[b]Uranium Turret[/b]
+Range: 50
+Minimum Range: 12
+Damage: 75
+Explodes: 6 squares
+Power Needed: 150
+Materials Needed: 300 steel, 60 uranium, 30 plasteel, 6 components
+
+
+
+
+[h1]Less Lethal Turrets[/h1]
+[b]Stunning Turret[/b]
+Range: 20
+Damage: Stuns for a very short time, x2 shot bursts
+Explodes: No
+Power Needed: 65
+Materials Needed: 50 steel, 50 metal, 2 components
+
+[list][*]Since the stunning turret doesn't do any damage, it's best used in conjunction with other turrets, like the tazing turret. This turret is built to humane standards, and isn't as ugly as the others.[/list]
+
+[b]Tazing Turret[/b]
+Range: 20
+Damage: Tazes, which does a little damage, but lots of pain
+Explodes: No
+Power Needed: 125
+Materials Needed: 60 steel, 80 metal, 2 components
+
+[list][*]Tazing does a little damage, but it's less-lethal and designed to drop targets instead of kill them. This turret is built to humane standards, and isn't as ugly as the others.[/list]
+
+
+[h1]Advanced Turrets[/h1]
+[b]Shredder Turret[/b]
+Range: 20
+Damage: 6 x7 shot bursts
+Explodes: 2 squares
+Power Needed: 120
+Materials Needed: 50 steel, 160 metal, 4 components
+
+[list][*]Short ranged shooter that throws a lot of rounds that do a little damage. Great for taking out lots of weak stuff. This turret isn't as ugly as the others, but is still unsightly.[/list]
+
+[b]Sniper Turret[/b]
+Range: 50
+Damage: 45
+Explodes: 4 squares
+Power Needed: 200
+Materials Needed: 60 steel, 140 metal, 4 components
+
+[list][*]Deals a lot of damage, accurate at long ranges. Long reload time between shots.[/list]
+
+[b]Standard Turret[/b]
+Range: 30
+Damage: 12 x6 shot bursts
+Explodes: 4 squares
+Power Needed: 250
+Materials Needed: 50 steel, 150 metal, 4 components
+
+[list][*]Consider this the upgraded mini-turret. It's got more hp, it fires an extra bullet or two, and does a tiny bit more damage. It's the big brother.[/list]
+
+[b]Heavy Turret[/b]
+Range: 35
+Damage: 17, continuously fires
+Explodes: 6 squares
+Power Needed: 370
+Materials Needed: 280 steel, 180 metal, 60 plasteel, 6 components, 1 advanced component
+
+[list][*]The heavy turret continuously fires heavy rounds in a steady and unforgiving rhythm.[/list]
+
+[b]Concussion Turret[/b]
+Range: 40
+Minimum Range: 5
+Damage: 40 explosive - 3 range
+Explodes: 6 squares
+Power Needed: 325
+Materials Needed: 300 steel, 180 metal, 7 components, 1 advanced component
+
+[list][*]The bullets explode. It does a lot of damage.[/list]
+
+
+[h1]Energy Turret[/h1]
+[b]Energy Turret[/b]
+Range: 30
+Damage: 3 burning, continuously fires
+Explodes: 6 squares
+Power Needed: 800
+Materials Needed: 155 steel, 40 plasteel, 80 metal, 4 components, 2 advanced components
+
+[list][*]This turret shoots lasers! Did you need anything else?? Doesn't stop firing and the shots don't do a lot of damage, but they cause burning which makes pawns panic.[/list]
+
+
+
+[h1]To do...[/h1]
+[list]
+[*]Change the looks of the less lethal turret sprites to something less... dangerous
+[/list]
+
+
+[h1]Need more power for your turrets?[/h1]
+Try these mods:
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1321849735]Rimfeller[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1409449372]Higher Power[/url]
+
+
+
+[h1]More immersive mods by Neceros:[/h1]
+
+[b][url=http://steamcommunity.com/sharedfiles/filedetails/?id=1267149586]99 Percent[/url][/b]
+Gain most of your resources back when you deconstruct.
+
+[b][url=http://steamcommunity.com/sharedfiles/filedetails/?id=1245219876]More Steel[/url][/b]
+Compacted steel gives more steel when mined, and increases the amount of ore that spawns on the map.
+
+[b][url=http://steamcommunity.com/sharedfiles/filedetails/?id=1254969827]Balanced Eclipse and Solar Flare[/url][/b]
+Cools down how often the moon and sun can interact with the planet.
+
+[b][url=http://steamcommunity.com/sharedfiles/filedetails/?id=1254970979]More Components[/url][/b]
+Compacted machinery gives 10 components instead of just 2.
+</description>
+</ModMetaData>

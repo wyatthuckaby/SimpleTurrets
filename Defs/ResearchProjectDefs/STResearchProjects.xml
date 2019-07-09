@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <ResearchProjectDef>
+    <defName>LessLethalTurrets</defName>
+    <label>Less-Lethal turrets</label>
+    <description>Allows the production of turrets which try not to kill.</description>
+  <baseCost>800</baseCost>
+  <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>GunTurrets</li>
+    </prerequisites>
+    <tab>ST</tab>
+    <researchViewX>0</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>AdvancedTurrets</defName>
+    <label>Advanced turrets</label>
+    <description>Allows the production of more advanced turrets for serious defense.</description>
+  <baseCost>3000</baseCost>
+  <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>GunTurrets</li>
+    </prerequisites>
+    <tab>ST</tab>
+    <researchViewX>0</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>EnergyTurret</defName>
+    <label>Energy turret</label>
+    <description>Allows the production of power hungry energy turrets.</description>
+  <baseCost>6000</baseCost>
+  <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>AdvancedTurrets</li>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <tab>ST</tab>
+    <researchViewX>1</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+
+
+</Defs>
