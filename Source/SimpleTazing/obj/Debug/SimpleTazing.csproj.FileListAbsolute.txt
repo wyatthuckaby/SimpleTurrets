@@ -1,0 +1,4 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\SimpleTurrets\Assemblies\SimpleTazing.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\SimpleTurrets\Source\SimpleTazing\obj\Debug\SimpleTazing.csprojAssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\SimpleTurrets\Source\SimpleTazing\obj\Debug\SimpleTazing.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\SimpleTurrets\Source\SimpleTazing\obj\Debug\SimpleTazing.dll

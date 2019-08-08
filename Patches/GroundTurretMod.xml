@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  
+  <!-- Using the magical wonders of JecsTools -->
+  <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Ground Turret Mod</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Turret_StunningTurret"]/comps</xpath>
+			<value>
+				<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
+			</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Turret_TazingTurret"]/comps</xpath>
+			<value>
+				<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
+			</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Turret_ShredderTurret"]/comps</xpath>
+			<value>
+				<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
+			</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Turret_StandardTurret"]/comps</xpath>
+			<value>
+				<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
+			</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Turret_HeavyTurret"]/comps</xpath>
+			<value>
+				<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
+			</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Turret_EnergyTurret"]/comps</xpath>
+			<value>
+				<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
+			</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Turret_ConcussiveTurret"]/comps</xpath>
+			<value>
+				<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
+			</value>
+			</li>			
+		</operations>
+	</match>
+  </Operation>
+
+</Patch>

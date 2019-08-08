@@ -87,7 +87,7 @@
     <specialDisplayRadius>19.9</specialDisplayRadius>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     <building>
-			<ai_combatDangerous>true</ai_combatDangerous>
+	  <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_StunningTurret</turretGunDef>
       <turretBurstCooldownTime>3.2</turretBurstCooldownTime>
       <turretTopGraphicPath>Things/Building/Security/TurretStunning_Top</turretTopGraphicPath>
@@ -149,6 +149,51 @@
         <defaultProjectile>Bullet_StunningTurret</defaultProjectile>
         <warmupTime>0</warmupTime>
         <range>19.9</range>
+        <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+        <burstShotCount>2</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+
+  <!-- Used for TE upgrades -->
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>Gun_StunningTurretUpgraded</defName>
+    <label>stunning-turret gun</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <menuHidden>true</menuHidden>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <weaponTags Inherit="false">
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_StunningTurret</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>29.9</range>
         <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
         <burstShotCount>2</burstShotCount>
         <soundCast>GunShotA</soundCast>
@@ -247,9 +292,9 @@
     <specialDisplayRadius>19.9</specialDisplayRadius>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     <building>
-			<ai_combatDangerous>true</ai_combatDangerous>
+	  <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_TazingTurret</turretGunDef>
-      <turretBurstCooldownTime>3.2</turretBurstCooldownTime>
+      <turretBurstCooldownTime>4.0</turretBurstCooldownTime>
       <turretTopGraphicPath>Things/Building/Security/TurretTazer_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
@@ -261,23 +306,74 @@
     </researchPrerequisites>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef Class="SimpleTasing.ThingDef_SimpleTaser_HediffBullet" ParentName="BaseBullet">
     <defName>Bullet_TazingTurret</defName>
-    <label>tazing bullet</label>
+    <label>tazing cartridge</label>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>Tazer</damageDef>
-	  <damageAmountBase>6</damageAmountBase>
-	  <stoppingPower>1.5</stoppingPower>
-	  <speed>70</speed>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>TaserNeedle</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+      <stoppingPower>0.8</stoppingPower>
+      <speed>70</speed>
     </projectile>
+    <AddHediffChance>0.85</AddHediffChance>
+    <HediffsToAdd>
+      <li>STTazed</li>
+    </HediffsToAdd>
+    <thingClass>SimpleTasing.Projectile_SimpleTaser_Cartridge</thingClass>
   </ThingDef>
 
   <ThingDef ParentName="BaseHumanGun">
     <defName>Gun_TazingTurret</defName>
+    <label>tazing-turret gun</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <menuHidden>true</menuHidden>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <weaponTags Inherit="false">
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_TazingTurret</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>19.9</range>
+        <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+
+  <!-- For TE upgrades -->
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>Gun_TazingTurretUpgraded</defName>
     <label>tazing-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
     <graphicData>
@@ -308,7 +404,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_TazingTurret</defaultProjectile>
         <warmupTime>0</warmupTime>
-        <range>19.9</range>
+        <range>29.9</range>
         <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
         <burstShotCount>1</burstShotCount>
         <soundCast>GunShotA</soundCast>
