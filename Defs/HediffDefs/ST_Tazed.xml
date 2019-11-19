@@ -4,7 +4,7 @@
         <defName>STTazed</defName>
         <label>tazed</label>
         <labelNoun>being tazed</labelNoun>
-        <lethalSeverity>1</lethalSeverity>
+        <lethalSeverity>1.25</lethalSeverity>
         <isBad>false</isBad>
         <comps>
             <li Class="HediffCompProperties_SeverityPerDay">

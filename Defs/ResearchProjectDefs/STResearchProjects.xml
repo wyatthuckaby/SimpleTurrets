@@ -32,8 +32,8 @@
 
   <ResearchProjectDef>
     <defName>EnergyTurret</defName>
-    <label>Energy turret</label>
-    <description>Allows the production of power hungry energy turrets.</description>
+    <label>Energy turrets</label>
+    <description>Allows the production of power hungry energy based turrets.</description>
   <baseCost>6000</baseCost>
   <techLevel>Spacer</techLevel>
     <prerequisites>
