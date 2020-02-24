@@ -62,7 +62,7 @@
                 </fuelFilter>
                 <fuelCapacity>60</fuelCapacity>
                 <initialFuelPercent>1</initialFuelPercent>
-                <autoRefuelPercent>0.1667</autoRefuelPercent>
+                <autoRefuelPercent>1</autoRefuelPercent>
                 <showFuelGizmo>true</showFuelGizmo>
                 <fuelMultiplier>10</fuelMultiplier>
                 <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
@@ -75,14 +75,14 @@
         <size>(3,1)</size>
         <hasInteractionCell>True</hasInteractionCell>
         <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-        <fillPercent>0.7</fillPercent>
+        <fillPercent>0.75</fillPercent>
         <castEdgeShadows>true</castEdgeShadows>
         <hasTooltip>true</hasTooltip>
         <specialDisplayRadius>36.9</specialDisplayRadius>
         <building>
             <turretGunDef>Gun_STRifleEmp</turretGunDef>
-            <turretBurstCooldownTime>2</turretBurstCooldownTime>
-            <turretBurstWarmupTime>1.2</turretBurstWarmupTime>
+            <turretBurstCooldownTime>0</turretBurstCooldownTime>
+            <turretBurstWarmupTime>3.2</turretBurstWarmupTime>
             <turretTopGraphicPath>Things/Building/Security/RifleEmplacement_Top</turretTopGraphicPath>
         </building>
     </ThingDef>
@@ -97,7 +97,7 @@
         <projectile>
             <damageDef>Bullet</damageDef>
             <damageAmountBase>18</damageAmountBase>
-            <stoppingPower>1.5</stoppingPower>
+            <stoppingPower>2</stoppingPower>
             <speed>70</speed>
         </projectile>
     </ThingDef>
@@ -122,7 +122,7 @@
             <AccuracyShort>0.53</AccuracyShort>
             <AccuracyMedium>0.85</AccuracyMedium>
             <AccuracyLong>0.96</AccuracyLong>
-            <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+            <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
             <DeteriorationRate>0</DeteriorationRate>
         </statBases>
         <weaponTags Inherit="False">
@@ -133,7 +133,7 @@
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
                 <defaultProjectile>Bullet_STRifleEmp</defaultProjectile>
-                <warmupTime>1.2</warmupTime>
+                <warmupTime>3.2</warmupTime>
                 <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
                 <burstShotCount>1</burstShotCount>
                 <range>36.9</range>
@@ -158,7 +158,7 @@
         <thingClass>Building_TurretGun</thingClass>
         <statBases>
             <MaxHitPoints>250</MaxHitPoints>
-            <Flammability>0.7</Flammability>
+            <Flammability>0.75</Flammability>
             <WorkToBuild>7200</WorkToBuild>
             <Beauty>-60</Beauty>
         </statBases>
@@ -171,7 +171,7 @@
         <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
         <designationCategory>Security</designationCategory>
         <costList>
-            <Steel>100</Steel>
+            <Steel>120</Steel>
             <ComponentIndustrial>6</ComponentIndustrial>
         </costList>
         <costStuffCount>40</costStuffCount>
@@ -209,7 +209,7 @@
                 </fuelFilter>
                 <fuelCapacity>300</fuelCapacity>
                 <initialFuelPercent>1</initialFuelPercent>
-                <autoRefuelPercent>0.1667</autoRefuelPercent>
+                <autoRefuelPercent>1</autoRefuelPercent>
                 <showFuelGizmo>true</showFuelGizmo>
                 <fuelMultiplier>12</fuelMultiplier>
                 <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
@@ -228,8 +228,8 @@
         <specialDisplayRadius>25.9</specialDisplayRadius>
         <building>
             <turretGunDef>Gun_STMGEmp</turretGunDef>
-            <turretBurstCooldownTime>2</turretBurstCooldownTime>
-            <turretBurstWarmupTime>1.2</turretBurstWarmupTime>
+            <turretBurstCooldownTime>0</turretBurstCooldownTime>
+            <turretBurstWarmupTime>2.4</turretBurstWarmupTime>
             <turretTopGraphicPath>Things/Building/Security/MGEmplacement_Top</turretTopGraphicPath>
         </building>
     </ThingDef>
@@ -243,8 +243,8 @@
         </graphicData>
         <projectile>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>11</damageAmountBase>
-            <stoppingPower>1</stoppingPower>
+            <damageAmountBase>15</damageAmountBase>
+            <stoppingPower>3</stoppingPower>
             <speed>46</speed>
         </projectile>
     </ThingDef>
@@ -269,7 +269,7 @@
             <AccuracyShort>0.86</AccuracyShort>
             <AccuracyMedium>0.65</AccuracyMedium>
             <AccuracyLong>0.35</AccuracyLong>
-            <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+            <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
             <DeteriorationRate>0</DeteriorationRate>
         </statBases>
         <weaponTags Inherit="False">
@@ -280,7 +280,7 @@
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
                 <defaultProjectile>Bullet_STMGEmp</defaultProjectile>
-                <warmupTime>1.2</warmupTime>
+                <warmupTime>2.4</warmupTime>
                 <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
                 <burstShotCount>6</burstShotCount>
                 <range>25.9</range>
