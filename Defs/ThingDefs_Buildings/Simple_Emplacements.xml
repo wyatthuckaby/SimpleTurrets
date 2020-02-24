@@ -2,298 +2,290 @@
 <Defs>
 
 
-    <!-- ========== Rifle Emplacement ========== -->
+  <!-- ========== Rifle Emplacement ========== -->
 
-    <ThingDef ParentName="BuildingBase">
-        <defName>Turret_STRifleEmp</defName>
-        <label>rifle emplacement</label>
-        <description>A fixed gun emplacement with a bolt-action rifle mounted on top. Needs a pawn to function.</description>
-        <thingClass>Building_TurretGun</thingClass>
-        <statBases>
-            <MaxHitPoints>250</MaxHitPoints>
-            <Flammability>0.6</Flammability>
-            <WorkToBuild>7200</WorkToBuild>
-            <Beauty>-60</Beauty>
-        </statBases>
-        <uiIconPath>Things/Building/Security/RifleEmplacement_MenuIcon</uiIconPath>
-        <uiIconScale>1</uiIconScale>
-        <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-        <researchPrerequisites>
-            <li>Gunsmithing</li>
-        </researchPrerequisites>
-        <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-        <designationCategory>Security</designationCategory>
-        <costList>
-            <Steel>120</Steel>
-            <ComponentIndustrial>5</ComponentIndustrial>
-        </costList>
-        <costStuffCount>0</costStuffCount>
-        <stuffCategories>
-            <li>Metallic</li>
-        </stuffCategories>
-        <placeWorkers>
-            <li>PlaceWorker_TurretTop</li>
-        </placeWorkers>
-        <graphicData>
-            <texPath>Things/Building/Security/STEmplacement/STEmplacement</texPath>
-            <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3.5,1.5)</drawSize>
-            <damageData>
-                <cornerTL>Damage/Corner</cornerTL>
-                <cornerTR>Damage/Corner</cornerTR>
-                <cornerBL>Damage/Corner</cornerBL>
-                <cornerBR>Damage/Corner</cornerBR>
-            </damageData>
-        </graphicData>
-        <altitudeLayer>Building</altitudeLayer>
-        <tickerType>Normal</tickerType>
-        <comps>
-            <li Class="CompProperties_Mannable">
-                <manWorkType>Violent</manWorkType>
-            </li>
-            <li Class="CompProperties_Forbiddable"/>
-            <li Class="CompProperties_Refuelable">
-                <fuelLabel>Shots until barrel change</fuelLabel>
-                <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-                <fuelFilter>
-                    <thingDefs>
-                        <li>Steel</li>
-                    </thingDefs>
-                </fuelFilter>
-                <fuelCapacity>60</fuelCapacity>
-                <initialFuelPercent>1</initialFuelPercent>
-                <autoRefuelPercent>1</autoRefuelPercent>
-                <showFuelGizmo>true</showFuelGizmo>
-                <fuelMultiplier>10</fuelMultiplier>
-                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-                <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
-                <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
-            </li>
-        </comps>
-        <passability>PassThroughOnly</passability>
-        <pathCost>70</pathCost>
-        <size>(3,1)</size>
-        <hasInteractionCell>True</hasInteractionCell>
-        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-        <fillPercent>0.75</fillPercent>
-        <castEdgeShadows>true</castEdgeShadows>
-        <hasTooltip>true</hasTooltip>
-        <specialDisplayRadius>36.9</specialDisplayRadius>
-        <building>
-            <turretGunDef>Gun_STRifleEmp</turretGunDef>
-            <turretBurstCooldownTime>0</turretBurstCooldownTime>
-            <turretBurstWarmupTime>3.2</turretBurstWarmupTime>
-            <turretTopGraphicPath>Things/Building/Security/RifleEmplacement_Top</turretTopGraphicPath>
-        </building>
-    </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_STRifleEmp</defName>
+    <label>rifle emplacement</label>
+    <description>A fixed gun emplacement with a bolt-action rifle mounted on top. Needs a pawn to function.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <statBases>
+        <MaxHitPoints>250</MaxHitPoints>
+        <Flammability>0.6</Flammability>
+        <WorkToBuild>7200</WorkToBuild>
+        <Beauty>-60</Beauty>
+    </statBases>
+    <uiIconPath>Things/Building/Security/RifleEmplacement_MenuIcon</uiIconPath>
+    <uiIconScale>1</uiIconScale>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <researchPrerequisites>
+        <li>Gunsmithing</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <costList>
+        <Steel>120</Steel>
+        <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <costStuffCount>0</costStuffCount>
+    <stuffCategories>
+        <li>Metallic</li>
+    </stuffCategories>
+    <placeWorkers>
+        <li>PlaceWorker_TurretTop</li>
+        <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <graphicData>
+        <texPath>Things/Building/Security/STEmplacement/STEmplacement</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(3.5,1.5)</drawSize>
+        <damageData>
+            <cornerTL>Damage/Corner</cornerTL>
+            <cornerTR>Damage/Corner</cornerTR>
+            <cornerBL>Damage/Corner</cornerBL>
+            <cornerBR>Damage/Corner</cornerBR>
+        </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <tickerType>Normal</tickerType>
+    <comps>
+        <li Class="CompProperties_Mannable">
+            <manWorkType>Violent</manWorkType>
+        </li>
+        <li Class="CompProperties_Forbiddable"/>
+        <li Class="CompProperties_Refuelable">
+            <fuelLabel>Shots until barrel change</fuelLabel>
+            <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+            <fuelFilter>
+                <thingDefs>
+                    <li>Steel</li>
+                </thingDefs>
+            </fuelFilter>
+            <fuelCapacity>60</fuelCapacity>
+            <initialFuelPercent>1</initialFuelPercent>
+            <autoRefuelPercent>1</autoRefuelPercent>
+            <showFuelGizmo>true</showFuelGizmo>
+            <fuelMultiplier>10</fuelMultiplier>
+            <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+            <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+            <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+        </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <size>(3,1)</size>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <fillPercent>0.75</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <building>
+        <turretGunDef>Gun_STRifleEmp</turretGunDef>
+        <turretBurstCooldownTime>0</turretBurstCooldownTime>
+        <turretBurstWarmupTime>3.2</turretBurstWarmupTime>
+    </building>
+</ThingDef>
 
-    <ThingDef ParentName="BaseBullet">
-        <defName>Bullet_STRifleEmp</defName>
-        <label>bolt-action rifle emplacement bullet</label>
-        <graphicData>
-            <texPath>Things/Projectile/Bullet_Big</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <projectile>
-            <damageDef>Bullet</damageDef>
-            <damageAmountBase>18</damageAmountBase>
-            <stoppingPower>2</stoppingPower>
-            <speed>70</speed>
-        </projectile>
-    </ThingDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>Bullet_STRifleEmp</defName>
+    <label>bolt-action rifle emplacement bullet</label>
+    <graphicData>
+        <texPath>Things/Projectile/Bullet_Big</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+        <damageDef>Bullet</damageDef>
+        <damageAmountBase>18</damageAmountBase>
+        <stoppingPower>2</stoppingPower>
+        <speed>70</speed>
+    </projectile>
+</ThingDef>
 
-    <ThingDef ParentName="BaseHumanGun">
-        <defName>Gun_STRifleEmp</defName>
-        <label>bolt-action rifle</label>
-        <graphicData>
-            <texPath>Things/Building/Security/RifleEmplacement_Top</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <menuHidden>true</menuHidden>
-        <description>Bolt-action rifle mounted on top of a solid object.</description>
-        <soundInteract>Interact_Rifle</soundInteract>
-        <tradeability>None</tradeability>
-        <destroyOnDrop>true</destroyOnDrop>
-        <useHitPoints>false</useHitPoints>
-        <statBases>
-            <Mass>40</Mass>
-            <Flammability>0</Flammability>
-            <AccuracyTouch>0.44</AccuracyTouch>
-            <AccuracyShort>0.53</AccuracyShort>
-            <AccuracyMedium>0.85</AccuracyMedium>
-            <AccuracyLong>0.96</AccuracyLong>
-            <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
-            <DeteriorationRate>0</DeteriorationRate>
-        </statBases>
-        <weaponTags Inherit="False">
-            <li>TurretGun</li>
-        </weaponTags>
-        <verbs>
-            <li>
-                <verbClass>Verb_Shoot</verbClass>
-                <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_STRifleEmp</defaultProjectile>
-                <warmupTime>3.2</warmupTime>
-                <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
-                <burstShotCount>1</burstShotCount>
-                <range>36.9</range>
-                <soundCast>Shot_BoltActionRifle</soundCast>
-                <soundCastTail>GunTail_Heavy</soundCastTail>
-                <muzzleFlashScale>9</muzzleFlashScale>
-                <consumeFuelPerShot>1</consumeFuelPerShot>
-                <targetParams>
-                    <canTargetLocations>false</canTargetLocations>
-                </targetParams>
-            </li>
-        </verbs>
-    </ThingDef>
+<ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_STRifleEmp</defName>
+    <label>bolt-action rifle</label>
+    <graphicData>
+        <texPath>Things/Building/Security/RifleEmplacement_Top</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <description>Bolt-action rifle mounted on top of a solid object.</description>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+        <Mass>40</Mass>
+        <Flammability>0</Flammability>
+        <AccuracyTouch>0.44</AccuracyTouch>
+        <AccuracyShort>0.53</AccuracyShort>
+        <AccuracyMedium>0.85</AccuracyMedium>
+        <AccuracyLong>0.96</AccuracyLong>
+        <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+        <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <verbs>
+        <li>
+            <verbClass>Verb_Shoot</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Bullet_STRifleEmp</defaultProjectile>
+            <warmupTime>3.2</warmupTime>
+            <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <range>36.9</range>
+            <soundCast>Shot_BoltActionRifle</soundCast>
+            <soundCastTail>GunTail_Heavy</soundCastTail>
+            <muzzleFlashScale>9</muzzleFlashScale>
+            <consumeFuelPerShot>1</consumeFuelPerShot>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </li>
+    </verbs>
+</ThingDef>
 
 
-    <!-- ========== Machine Gun Emplacement ========== -->
+<!-- ========== Machine Gun Emplacement ========== -->
 
-    <ThingDef ParentName="BuildingBase">
-        <defName>Turret_STMGEmp</defName>
-        <label>machine-gun emplacement</label>
-        <description>A fixed gun emplacement with a machine gun mounted on top. Needs a pawn to function.</description>
-        <thingClass>Building_TurretGun</thingClass>
-        <statBases>
-            <MaxHitPoints>250</MaxHitPoints>
-            <Flammability>0.75</Flammability>
-            <WorkToBuild>7200</WorkToBuild>
-            <Beauty>-60</Beauty>
-        </statBases>
-        <uiIconPath>Things/Building/Security/MGEmplacement_MenuIcon</uiIconPath>
-        <uiIconScale>1</uiIconScale>
-        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
-        <researchPrerequisites>
-            <li>GasOperation</li>
-        </researchPrerequisites>
-        <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-        <designationCategory>Security</designationCategory>
-        <costList>
-            <Steel>120</Steel>
-            <ComponentIndustrial>6</ComponentIndustrial>
-        </costList>
-        <costStuffCount>40</costStuffCount>
-        <stuffCategories>
-            <li>Metallic</li>
-        </stuffCategories>
-        <placeWorkers>
-            <li>PlaceWorker_TurretTop</li>
-        </placeWorkers>
-        <graphicData>
-            <texPath>Things/Building/Security/STEmplacement/STEmplacement</texPath>
-            <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3.5,1.5)</drawSize>
-            <damageData>
-                <cornerTL>Damage/Corner</cornerTL>
-                <cornerTR>Damage/Corner</cornerTR>
-                <cornerBL>Damage/Corner</cornerBL>
-                <cornerBR>Damage/Corner</cornerBR>
-            </damageData>
-        </graphicData>
-        <altitudeLayer>Building</altitudeLayer>
-        <tickerType>Normal</tickerType>
-        <comps>
-            <li Class="CompProperties_Mannable">
-                <manWorkType>Violent</manWorkType>
-            </li>
-            <li Class="CompProperties_Forbiddable"/>
-            <li Class="CompProperties_Refuelable">
-                <fuelLabel>Shots until barrel change</fuelLabel>
-                <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-                <fuelFilter>
-                    <thingDefs>
-                        <li>Steel</li>
-                    </thingDefs>
-                </fuelFilter>
-                <fuelCapacity>300</fuelCapacity>
-                <initialFuelPercent>1</initialFuelPercent>
-                <autoRefuelPercent>1</autoRefuelPercent>
-                <showFuelGizmo>true</showFuelGizmo>
-                <fuelMultiplier>12</fuelMultiplier>
-                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-                <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
-                <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
-            </li>
-        </comps>
-        <passability>PassThroughOnly</passability>
-        <pathCost>70</pathCost>
-        <size>(3,1)</size>
-        <hasInteractionCell>True</hasInteractionCell>
-        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-        <fillPercent>0.7</fillPercent>
-        <castEdgeShadows>true</castEdgeShadows>
-        <hasTooltip>true</hasTooltip>
-        <specialDisplayRadius>25.9</specialDisplayRadius>
-        <building>
-            <turretGunDef>Gun_STMGEmp</turretGunDef>
-            <turretBurstCooldownTime>0</turretBurstCooldownTime>
-            <turretBurstWarmupTime>2.4</turretBurstWarmupTime>
-            <turretTopGraphicPath>Things/Building/Security/MGEmplacement_Top</turretTopGraphicPath>
-        </building>
-    </ThingDef>
+<ThingDef ParentName="BuildingBase">
+    <defName>Turret_STMGEmp</defName>
+    <label>machine-gun emplacement</label>
+    <description>A fixed gun emplacement with a machine gun mounted on top. Needs a pawn to function.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <statBases>
+        <MaxHitPoints>250</MaxHitPoints>
+        <Flammability>0.75</Flammability>
+        <WorkToBuild>7200</WorkToBuild>
+        <Beauty>-60</Beauty>
+    </statBases>
+    <uiIconPath>Things/Building/Security/MGEmplacement_MenuIcon</uiIconPath>
+    <uiIconScale>1</uiIconScale>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <researchPrerequisites>
+        <li>GasOperation</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <costList>
+        <Steel>120</Steel>
+        <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <costStuffCount>40</costStuffCount>
+    <stuffCategories>
+        <li>Metallic</li>
+    </stuffCategories>
+    <placeWorkers>
+        <li>PlaceWorker_TurretTop</li>
+        <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <graphicData>
+        <texPath>Things/Building/Security/STEmplacement/STEmplacement</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(3.5,1.5)</drawSize>
+        <damageData>
+            <cornerTL>Damage/Corner</cornerTL>
+            <cornerTR>Damage/Corner</cornerTR>
+            <cornerBL>Damage/Corner</cornerBL>
+            <cornerBR>Damage/Corner</cornerBR>
+        </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <tickerType>Normal</tickerType>
+    <comps>
+        <li Class="CompProperties_Mannable">
+            <manWorkType>Violent</manWorkType>
+        </li>
+        <li Class="CompProperties_Forbiddable"/>
+        <li Class="CompProperties_Refuelable">
+            <fuelLabel>Shots until barrel change</fuelLabel>
+            <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+            <fuelFilter>
+                <thingDefs>
+                    <li>Steel</li>
+                </thingDefs>
+            </fuelFilter>
+            <fuelCapacity>300</fuelCapacity>
+            <initialFuelPercent>1</initialFuelPercent>
+            <autoRefuelPercent>1</autoRefuelPercent>
+            <showFuelGizmo>true</showFuelGizmo>
+            <fuelMultiplier>12</fuelMultiplier>
+            <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+            <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+            <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+        </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <size>(3,1)</size>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <fillPercent>0.7</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <building>
+        <turretGunDef>Gun_STMGEmp</turretGunDef>
+        <turretBurstCooldownTime>0</turretBurstCooldownTime>
+        <turretBurstWarmupTime>2.4</turretBurstWarmupTime>
+    </building>
+</ThingDef>
 
-    <ThingDef ParentName="BaseBullet">
-        <defName>Bullet_STMGEmp</defName>
-        <label>machine gun emplacement bullet</label>
-        <graphicData>
-            <texPath>Things/Projectile/Bullet_Small</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <projectile>
-            <damageDef>Bullet</damageDef>
-            <damageAmountBase>15</damageAmountBase>
-            <stoppingPower>3</stoppingPower>
-            <speed>46</speed>
-        </projectile>
-    </ThingDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>Bullet_STMGEmp</defName>
+    <label>machine gun emplacement bullet</label>
+    <graphicData>
+        <texPath>Things/Projectile/Bullet_Small</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+        <damageDef>Bullet</damageDef>
+        <damageAmountBase>15</damageAmountBase>
+        <stoppingPower>3</stoppingPower>
+        <speed>46</speed>
+    </projectile>
+</ThingDef>
 
-    <ThingDef ParentName="BaseHumanGun">
-        <defName>Gun_STMGEmp</defName>
-        <label>machine gun rifle</label>
-        <graphicData>
-            <texPath>Things/Building/Security/MGEmplacement_Top</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <menuHidden>true</menuHidden>
-        <description>Machine gun mounted on top of a solid object.</description>
-        <soundInteract>Interact_Rifle</soundInteract>
-        <tradeability>None</tradeability>
-        <destroyOnDrop>true</destroyOnDrop>
-        <useHitPoints>false</useHitPoints>
-        <statBases>
-            <Mass>40</Mass>
-            <Flammability>0</Flammability>
-            <AccuracyTouch>0.65</AccuracyTouch>
-            <AccuracyShort>0.86</AccuracyShort>
-            <AccuracyMedium>0.65</AccuracyMedium>
-            <AccuracyLong>0.35</AccuracyLong>
-            <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
-            <DeteriorationRate>0</DeteriorationRate>
-        </statBases>
-        <weaponTags Inherit="False">
-            <li>TurretGun</li>
-        </weaponTags>
-        <verbs>
-            <li>
-                <verbClass>Verb_Shoot</verbClass>
-                <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_STMGEmp</defaultProjectile>
-                <warmupTime>2.4</warmupTime>
-                <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
-                <burstShotCount>6</burstShotCount>
-                <range>25.9</range>
-                <soundCast>Shot_Minigun</soundCast>
-                <soundCastTail>GunTail_Medium</soundCastTail>
-                <muzzleFlashScale>9</muzzleFlashScale>
-                <consumeFuelPerShot>1</consumeFuelPerShot>
-                <targetParams>
-                    <canTargetLocations>true</canTargetLocations>
-                </targetParams>
-            </li>
-        </verbs>
-    </ThingDef>
+<ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_STMGEmp</defName>
+    <label>machine gun rifle</label>
+    <graphicData>
+        <texPath>Things/Building/Security/MGEmplacement_Top</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <description>Machine gun mounted on top of a solid object.</description>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+        <Mass>40</Mass>
+        <Flammability>0</Flammability>
+        <AccuracyTouch>0.65</AccuracyTouch>
+        <AccuracyShort>0.86</AccuracyShort>
+        <AccuracyMedium>0.65</AccuracyMedium>
+        <AccuracyLong>0.35</AccuracyLong>
+        <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+        <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <verbs>
+        <li>
+            <verbClass>Verb_Shoot</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Bullet_STMGEmp</defaultProjectile>
+            <warmupTime>2.4</warmupTime>
+            <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+            <burstShotCount>6</burstShotCount>
+            <range>25.9</range>
+            <soundCast>Shot_Minigun</soundCast>
+            <soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>9</muzzleFlashScale>
+            <consumeFuelPerShot>1</consumeFuelPerShot>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </li>
+    </verbs>
+  </ThingDef>
 
 
 

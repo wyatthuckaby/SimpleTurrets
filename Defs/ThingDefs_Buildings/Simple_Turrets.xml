@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+
+<!-- for reference
+
+  <ThingDef Abstract="True" Name="BaseWeaponTurret" ParentName="BaseWeapon">
+    <destroyOnDrop>True</destroyOnDrop>
+    <menuHidden>true</menuHidden>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <weaponTags>
+      <li>TurretGun</li>
+    </weaponTags>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+-->
   
   <!-- Stunning Turret -->
 
@@ -84,18 +102,16 @@
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>19.9</specialDisplayRadius>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_StunningTurret</turretGunDef>
       <turretBurstCooldownTime>4.2</turretBurstCooldownTime>
-      <turretTopGraphicPath>Things/Building/Security/TurretStunning_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
-    <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
       <li>LessLethalTurrets</li>
     </researchPrerequisites>
@@ -110,13 +126,13 @@
     </graphicData>
     <projectile>
       <damageDef>Stun</damageDef>
-	  <damageAmountBase>6</damageAmountBase>
-	  <stoppingPower>1.5</stoppingPower>
-	  <speed>70</speed>
+      <damageAmountBase>6</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>70</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_StunningTurret</defName>
     <label>stunning-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -139,9 +155,6 @@
       <Mass>5</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -161,7 +174,7 @@
 
 
   <!-- Used for TE upgrades -->
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_StunningTurretUpgraded</defName>
     <label>stunning-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -184,9 +197,6 @@
       <Mass>5</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -289,18 +299,16 @@
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>19.9</specialDisplayRadius>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     <building>
-	  <ai_combatDangerous>true</ai_combatDangerous>
+	   <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_TazingTurret</turretGunDef>
       <turretBurstCooldownTime>4.0</turretBurstCooldownTime>
-      <turretTopGraphicPath>Things/Building/Security/TurretTazer_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
-    <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
       <li>LessLethalTurrets</li>
     </researchPrerequisites>
@@ -327,7 +335,7 @@
     <thingClass>SimpleTasing.Projectile_SimpleTaser_Cartridge</thingClass>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_TazingTurret</defName>
     <label>tazing-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -350,9 +358,6 @@
       <Mass>5</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -372,7 +377,7 @@
 
 
   <!-- For TE upgrades -->
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_TazingTurretUpgraded</defName>
     <label>tazing-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -395,9 +400,6 @@
       <Mass>5</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -505,18 +507,16 @@
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>49.9</specialDisplayRadius>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_SniperTurret</turretGunDef>
       <turretBurstCooldownTime>5.9</turretBurstCooldownTime>
-      <turretTopGraphicPath>Things/Building/Security/TurretSniper2_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
-    <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
       <li>AdvancedTurrets</li>
     </researchPrerequisites>
@@ -537,7 +537,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_SniperTurret</defName>
     <label>sniper-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -560,9 +560,6 @@
       <Mass>30</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -669,18 +666,16 @@
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>29.9</specialDisplayRadius>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_StandardTurret</turretGunDef>
       <turretBurstCooldownTime>3.2</turretBurstCooldownTime>
-      <turretTopGraphicPath>Things/Building/Security/TurretStandard_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
-    <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
       <li>AdvancedTurrets</li>
     </researchPrerequisites>
@@ -701,7 +696,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_StandardTurret</defName>
     <label>standard-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -724,9 +719,6 @@
       <Mass>15</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -817,18 +809,16 @@
     </costList>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>29.9</specialDisplayRadius>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_EnergyTurret</turretGunDef>
       <turretBurstCooldownTime>0.3</turretBurstCooldownTime>
-      <turretTopGraphicPath>Things/Building/Security/TurretEnergy_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
-    <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
       <li>EnergyTurret</li>
     </researchPrerequisites>
@@ -863,7 +853,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_EnergyTurret</defName>
     <label>energy-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -886,9 +876,6 @@
       <Mass>15</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -906,7 +893,7 @@
   </ThingDef>
 
   <!-- Upgraded Def for TE -->
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_EnergyTurretUpgraded</defName>
     <label>energy-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -929,9 +916,6 @@
       <Mass>15</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -1040,18 +1024,16 @@
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>34.9</specialDisplayRadius>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_HeavyTurret</turretGunDef>
       <turretBurstCooldownTime>0.3</turretBurstCooldownTime>
-      <turretTopGraphicPath>Things/Building/Security/TurretHeavy_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
-    <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
       <li>AdvancedTurrets</li>
     </researchPrerequisites>
@@ -1072,7 +1054,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_HeavyTurret</defName>
     <label>heavy-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -1095,9 +1077,6 @@
       <Mass>35</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -1203,18 +1182,16 @@
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>19.9</specialDisplayRadius>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_ShredderTurret</turretGunDef>
       <turretBurstCooldownTime>2.8</turretBurstCooldownTime>
-      <turretTopGraphicPath>Things/Building/Security/TurretShredder_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
-    <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
       <li>AdvancedTurrets</li>
     </researchPrerequisites>
@@ -1235,7 +1212,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_ShredderTurret</defName>
     <label>shredder-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -1258,9 +1235,6 @@
       <Mass>5</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -1370,18 +1344,16 @@
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>39.9</specialDisplayRadius>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_ConcussiveTurret</turretGunDef>
       <turretBurstCooldownTime>6.9</turretBurstCooldownTime>
-      <turretTopGraphicPath>Things/Building/Security/TurretConcussive_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
-    <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
       <li>AdvancedTurrets</li>
     </researchPrerequisites>
@@ -1407,7 +1379,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_ConcussiveTurret</defName>
     <label>concussive-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -1430,9 +1402,6 @@
       <Mass>15</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
       	<forcedMissRadius>0.5</forcedMissRadius>
@@ -1524,18 +1493,16 @@
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>39.9</specialDisplayRadius>
     <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_EMPTurret</turretGunDef>
       <turretBurstCooldownTime>9.9</turretBurstCooldownTime>
-      <turretTopGraphicPath>Things/Building/Security/TurretEMP_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
-    <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
       <li>EnergyTurret</li>
     </researchPrerequisites>
@@ -1556,7 +1523,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_EMPTurret</defName>
     <label>EMP-turret gun</label>
     <description>A simple automatic gun made to be mounted on a turret.</description>
@@ -1579,9 +1546,6 @@
       <Mass>15</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <weaponTags Inherit="false">
-      <li>TurretGun</li>
-    </weaponTags>
     <verbs>
       <li>
         <forcedMissRadius>0.1</forcedMissRadius>

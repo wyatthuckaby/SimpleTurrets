@@ -3,6 +3,7 @@
     <HediffDef ParentName="DiseaseBase">
         <defName>STTazed</defName>
         <label>tazed</label>
+        <description>Suffering from being tased. Consciousness is being reduced, and could potentially lead to death.</description>
         <labelNoun>being tazed</labelNoun>
         <lethalSeverity>1.25</lethalSeverity>
         <isBad>false</isBad>
@@ -83,6 +84,7 @@
     <HediffDef ParentName="InjuryBase">
         <defName>Pronged</defName>
         <label>pronged</label>
+        <description>Small punctures from the prongs while being tased.</description>
         <labelNoun>a needle prong wound</labelNoun>
         <comps>
           <li Class="HediffCompProperties_TendDuration">
