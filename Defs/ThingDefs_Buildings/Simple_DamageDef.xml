@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef>
+    <defName>HeavyRound</defName>
+    <label>heavy round</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <isExplosive>false</isExplosive>
+    <deathMessage>{0} has died due to severe shock.</deathMessage>
+    <hediff>Shredded</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <minDamageToFragment>15</minDamageToFragment>
+    <defaultDamage>6</defaultDamage>
+    <defaultStoppingPower>1.5</defaultStoppingPower>
+    <defaultArmorPenetration>0.50</defaultArmorPenetration>
+    <buildingDamageFactor>4</buildingDamageFactor>
+    <plantDamageFactor>2</plantDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>0</explosionHeatEnergyPerCell>
+    <explosionCellMote>Mote_BlastDry</explosionCellMote>
+    <explosionColorCenter>(1,1,1)</explosionColorCenter>
+    <explosionColorEdge>(1,1,1,0.4)</explosionColorEdge>
+    <soundExplosion>Pawn_Melee_BigBash_HitBuilding</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+
+
+</Defs>

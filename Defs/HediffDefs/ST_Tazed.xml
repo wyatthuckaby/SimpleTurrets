@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
     <HediffDef ParentName="DiseaseBase">
         <defName>STTazed</defName>
         <label>tazed</label>
@@ -18,12 +19,24 @@
         </injuryProps>
         <stages>
             <li>
-                <minSeverity>0.1</minSeverity>
+                <minSeverity>0.01</minSeverity>
                 <label>minor</label>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
                         <setMax>0.7</setMax>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <setMax>0.4</setMax>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <setMax>0.6</setMax>
                     </li>
                 </capMods>
             </li>
@@ -33,35 +46,59 @@
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <setMax>0.5</setMax>
+                        <setMax>0.4</setMax>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <setMax>0.25</setMax>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <setMax>0.25</setMax>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <setMax>0.3</setMax>
                     </li>
                 </capMods>
             </li>
             <li>
-                <minSeverity>0.4</minSeverity>
+                <minSeverity>0.75</minSeverity>
                 <label>severe</label>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <setMax>0.25</setMax>
+                        <setMax>0.20</setMax>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <setMax>0.05</setMax>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <setMax>0</setMax>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <setMax>0</setMax>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <setMax>0.2</setMax>
                     </li>
                 </capMods>
             </li>
             <li>
-                <minSeverity>0.60</minSeverity>
-                <label>extreme</label>
+                <minSeverity>1.1</minSeverity>
+                <label>lethal</label>
+                <lifeThreatening>true</lifeThreatening>
+                <deathMtbDays>1</deathMtbDays>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <setMax>0.1</setMax>
+                        <setMax>0.10</setMax>
                     </li>
                 </capMods>
-            </li>
-            <li>
-                <minSeverity>0.95</minSeverity>
-                <lifeThreatening>true</lifeThreatening>
-                <deathMtbDays>0.2</deathMtbDays>
-                <label>lethal</label>
             </li>
         </stages>
     </HediffDef>
@@ -74,7 +111,7 @@
         <deathMessage>{0} has been needle pronged to death.</deathMessage>
         <hediff>Pronged</hediff>
         <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
-        <impactSoundType>Bullet</impactSoundType>
+        <impactSoundType>Electric</impactSoundType>
         <armorCategory>Sharp</armorCategory>
         <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
         <isRanged>true</isRanged>
@@ -96,12 +133,12 @@
           </li>
         </comps>
         <injuryProps>
-            <painPerSeverity>0.00125</painPerSeverity>
+            <painPerSeverity>0.00025</painPerSeverity>
             <averagePainPerSeverityPermanent>0.000625</averagePainPerSeverityPermanent>
-            <bleedRate>0.005</bleedRate>
+            <bleedRate>0.002</bleedRate>
             <canMerge>false</canMerge>
-            <destroyedLabel>Shot off</destroyedLabel>
-            <destroyedOutLabel>Shot out</destroyedOutLabel>
+            <destroyedLabel>Needled off</destroyedLabel>
+            <destroyedOutLabel>Needled out</destroyedOutLabel>
         </injuryProps>
     </HediffDef>
 </Defs>
