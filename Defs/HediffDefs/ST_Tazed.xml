@@ -111,7 +111,7 @@
         <deathMessage>{0} has been needle pronged to death.</deathMessage>
         <hediff>Pronged</hediff>
         <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
-        <impactSoundType>Electric</impactSoundType>
+        <impactSoundType>Blunt</impactSoundType>
         <armorCategory>Sharp</armorCategory>
         <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
         <isRanged>true</isRanged>

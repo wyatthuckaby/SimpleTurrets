@@ -380,11 +380,11 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_TazingTurret</defaultProjectile>
-        <warmupTime>4</warmupTime>
-        <range>34.9</range>
+        <warmupTime>2</warmupTime>
+        <range>19.9</range>
         <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
         <burstShotCount>1</burstShotCount>
-        <soundCast>Electric</soundCast>
+        <soundCast>GunShotA</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
         <consumeFuelPerShot>1</consumeFuelPerShot>
