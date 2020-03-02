@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Heavy Turret -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_HeavyTurret</defName>
+    <label>heavy turret</label>
+    <description>A portable automatic turret designed to take a lot of damage, in exchange it doesn't do a lot of damage. These are meant as front line targets. Requires a lot of steel to refurbish its barrel after use. Might explode out to 6 tiles when damaged.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Security/TurretMini_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>TurretHeavy_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>550</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <WorkToBuild>12000</WorkToBuild>
+      <Mass>20</Mass>
+      <Beauty>-50</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>5.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.85</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>220</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>120</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.99</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>4</fuelMultiplier>
+        <factorByDifficulty>false</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>180</costStuffCount>
+    <costList>
+      <Steel>240</Steel>
+      <Plasteel>25</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_HeavyTurret</turretGunDef>
+      <turretBurstCooldownTime>3.2</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>HeavyTurrets</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HeavyTurret</defName>
+    <label>heavy-turret bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>HeavyRound</damageDef>
+      <damageAmountBase>5</damageAmountBase>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <speed>76</speed>
+      <explosionRadius>1.5</explosionRadius>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_HeavyTurret</defName>
+    <label>heavy-turret gun</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>TurretHeavy_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <menuHidden>true</menuHidden>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.10</AccuracyTouch>
+      <AccuracyShort>0.55</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.05</AccuracyLong>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>35</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HeavyTurret</defaultProjectile>
+        <forcedMissRadius>2.4</forcedMissRadius>
+        <warmupTime>0</warmupTime>
+        <range>34.9</range>
+        <minRange>1.9</minRange>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- Used for Turret Extension -->
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_HeavyTurretUpgraded</defName>
+    <label>upgraded heavy-turret gun</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>TurretHeavy_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <menuHidden>true</menuHidden>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.05</AccuracyTouch>
+      <AccuracyShort>0.15</AccuracyShort>
+      <AccuracyMedium>0.58</AccuracyMedium>
+      <AccuracyLong>0.69</AccuracyLong>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>35</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HeavyTurret</defaultProjectile>
+        <forcedMissRadius>2</forcedMissRadius>
+        <warmupTime>0</warmupTime>
+        <range>54.9</range>
+        <minRange>12.9</minRange>
+        <ticksBetweenBurstShots>13</ticksBetweenBurstShots>
+        <burstShotCount>6</burstShotCount>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- Concussive Turret -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_ConcussiveTurret</defName>
+    <label>concussive turret</label>
+    <description>A portable automatic turret designed to shoot explosive bullets. Requires steel to refurbish its barrel after heavy use. Might explode out to 6 tiles when damaged.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Security/TurretMini_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>TurretConcussive_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <WorkToBuild>6000</WorkToBuild>
+      <Mass>25</Mass>
+      <Beauty>-80</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>5.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.65</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until reload</fuelLabel>
+        <fuelGizmoLabel>HE Shell Count</fuelGizmoLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Shell_HighExplosive</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>8</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.99</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>1</fuelMultiplier>
+        <factorByDifficulty>false</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+    <costList>
+      <Steel>240</Steel>
+      <Shell_HighExplosive>12</Shell_HighExplosive>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_ConcussiveTurret</turretGunDef>
+      <turretBurstCooldownTime>11.9</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>HeavyTurrets</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_ConcussiveTurret</defName>
+    <label>concussive-turret bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>47</damageAmountBase>
+      <armorPenetrationBase>0.70</armorPenetrationBase>
+      <explosionRadius>4</explosionRadius>
+      <speed>67</speed>
+      <stoppingPower>2</stoppingPower>
+      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>0.10</preExplosionSpawnChance>
+      <explosionChanceToStartFire>0.35</explosionChanceToStartFire>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+    </projectile>
+  </ThingDef>
+
+  <!-- TE upgrade -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_ConcussiveTurretUpgraded</defName>
+    <label>concussive-turret bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>28</damageAmountBase>
+      <armorPenetrationBase>0.40</armorPenetrationBase>
+      <explosionRadius>3</explosionRadius>
+      <speed>67</speed>
+      <stoppingPower>1</stoppingPower>
+      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>0.15</preExplosionSpawnChance>
+      <explosionChanceToStartFire>0.35</explosionChanceToStartFire>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_ConcussiveTurret</defName>
+    <label>concussive-turret gun</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>TurretConcussive_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <menuHidden>true</menuHidden>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.05</AccuracyTouch>
+      <AccuracyShort>0.48</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.58</AccuracyLong>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+      	<forcedMissRadius>1</forcedMissRadius>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_ConcussiveTurret</defaultProjectile>
+        <warmupTime>3</warmupTime>
+        <range>39.9</range>
+        <minRange>5.9</minRange>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Mortar_LaunchA</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>34</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- TE Upgraded -->
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_ConcussiveTurretUpgraded</defName>
+    <label>upgraded concussive-turret gun</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>TurretConcussive_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <menuHidden>true</menuHidden>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.05</AccuracyTouch>
+      <AccuracyShort>0.15</AccuracyShort>
+      <AccuracyMedium>0.67</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <forcedMissRadius>1</forcedMissRadius>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_ConcussiveTurretUpgraded</defaultProjectile>
+        <warmupTime>3</warmupTime>
+        <range>45.9</range>
+        <minRange>8.9</minRange>
+        <ticksBetweenBurstShots>24</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Mortar_LaunchA</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>34</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+
+</Defs>

@@ -49,30 +49,13 @@
             <manWorkType>Violent</manWorkType>
         </li>
         <li Class="CompProperties_Forbiddable"/>
-        <li Class="CompProperties_Refuelable">
-            <fuelLabel>Shots until barrel change</fuelLabel>
-            <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-            <fuelFilter>
-                <thingDefs>
-                    <li>Steel</li>
-                </thingDefs>
-            </fuelFilter>
-            <fuelCapacity>60</fuelCapacity>
-            <initialFuelPercent>1</initialFuelPercent>
-            <autoRefuelPercent>1</autoRefuelPercent>
-            <showFuelGizmo>true</showFuelGizmo>
-            <fuelMultiplier>5</fuelMultiplier>
-            <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-            <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
-            <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
-        </li>
     </comps>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <size>(3,1)</size>
     <hasInteractionCell>True</hasInteractionCell>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-    <fillPercent>0.75</fillPercent>
+    <fillPercent>0.60</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
     <hasTooltip>true</hasTooltip>
     <building>
@@ -132,7 +115,6 @@
             <soundCast>Shot_BoltActionRifle</soundCast>
             <soundCastTail>GunTail_Heavy</soundCastTail>
             <muzzleFlashScale>9</muzzleFlashScale>
-            <consumeFuelPerShot>1</consumeFuelPerShot>
             <targetParams>
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
@@ -192,30 +174,13 @@
             <manWorkType>Violent</manWorkType>
         </li>
         <li Class="CompProperties_Forbiddable"/>
-        <li Class="CompProperties_Refuelable">
-            <fuelLabel>Shots until barrel change</fuelLabel>
-            <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-            <fuelFilter>
-                <thingDefs>
-                    <li>Steel</li>
-                </thingDefs>
-            </fuelFilter>
-            <fuelCapacity>300</fuelCapacity>
-            <initialFuelPercent>1</initialFuelPercent>
-            <autoRefuelPercent>1</autoRefuelPercent>
-            <showFuelGizmo>true</showFuelGizmo>
-            <fuelMultiplier>8</fuelMultiplier>
-            <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-            <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
-            <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
-        </li>
     </comps>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <size>(3,1)</size>
     <hasInteractionCell>True</hasInteractionCell>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-    <fillPercent>0.7</fillPercent>
+    <fillPercent>0.60</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
     <hasTooltip>true</hasTooltip>
     <building>
@@ -275,7 +240,6 @@
             <soundCast>Shot_Minigun</soundCast>
             <soundCastTail>GunTail_Medium</soundCastTail>
             <muzzleFlashScale>9</muzzleFlashScale>
-            <consumeFuelPerShot>1</consumeFuelPerShot>
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>

@@ -7,7 +7,6 @@
 		<li>Ground Turret Mod</li>
 	</mods>
 	<match Class="PatchOperationSequence">
-		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="Turret_StunningTurret"]/comps</xpath>
@@ -47,10 +46,16 @@
 			</li>
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="Turret_ConcussiveTurret"]/comps</xpath>
-			<value>
-				<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
-			</value>
-			</li>			
+				<value>
+					<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Turret_STEMPTurret"]/comps</xpath>
+				<value>
+					<li Class="FP_GTM.CompProperties_FP_GTM_B"/>
+				</value>
+			</li>
 		</operations>
 	</match>
   </Operation>
