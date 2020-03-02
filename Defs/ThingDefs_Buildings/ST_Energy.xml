@@ -334,7 +334,7 @@
     </statBases>
     <verbs>
       <li>
-        <forcedMissRadius>1</forcedMissRadius>
+        <forcedMissRadius>.5</forcedMissRadius>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_EMPTurret</defaultProjectile>
@@ -376,7 +376,7 @@
     </statBases>
     <verbs>
       <li>
-        <forcedMissRadius>2</forcedMissRadius>
+        <forcedMissRadius>1</forcedMissRadius>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_EMPTurretUpgraded</defaultProjectile>
