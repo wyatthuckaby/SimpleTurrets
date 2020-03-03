@@ -81,7 +81,6 @@
       <Steel>240</Steel>
       <Plasteel>25</Plasteel>
       <ComponentIndustrial>2</ComponentIndustrial>
-      <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
