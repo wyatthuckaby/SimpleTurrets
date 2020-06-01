@@ -103,7 +103,7 @@
     <projectile>
       <damageDef>Stun</damageDef>
       <damageAmountBase>5</damageAmountBase>
-      <stoppingPower>1</stoppingPower>
+      <stoppingPower>0.5</stoppingPower>
       <speed>80</speed>
     </projectile>
   </ThingDef>
