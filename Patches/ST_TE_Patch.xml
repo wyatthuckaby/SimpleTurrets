@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+<!--
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
 
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>[XND] Turret Extensions</li>
-    </mods>
-    <match Class="PatchOperationSequence">
-      <success>Always</success>
-      <operations>
-        <!-- Stunning-Turret -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Turret_StunningTurret"]/comps</xpath>
+      <li Class="PatchOperationConditional">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName="Turret_StunningTurret"]</xpath>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName="Turret_StunningTurret"]/comps</xpath>
           <value>
             <li Class="TurretExtensions.CompProperties_Upgradable">
               <description>Equip the turret with an overloaded switch-change barrel, a better medical stunning syrum injector storage, and an X-35 OC compressor for better range.</description>
@@ -29,194 +28,192 @@
               <turretTopDrawSize>2.5</turretTopDrawSize>
             </li>
           </value>
-        </li>
+        </match>
+      </li>
 
-        <!-- Tazing-Turret -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Turret_TazingTurret"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>Add a specialized AI for better target scanning and range, an upgraded injector turnshift for increased rate of fire, and double-baubled liquid converter for increased storage.</description>
-              <costStuffCount>25</costStuffCount>
-              <costList>
-                <Steel>50</Steel>
-                <MedicineIndustrial>4</MedicineIndustrial>
-                <ComponentIndustrial>3</ComponentIndustrial>
-              </costList>
-              <workToUpgrade>7200</workToUpgrade>
-              <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
-              <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
-              <fuelCapacityFactor>2</fuelCapacityFactor>
-              <canForceAttack>true</canForceAttack>
-              <turretGunDef>Gun_TazingTurretUpgraded</turretGunDef>
-              <turretBurstCooldownTimeFactor>0.5</turretBurstCooldownTimeFactor>
-              <turretTopDrawSize>2.5</turretTopDrawSize>
-            </li>
-          </value>
-        </li>
-
-        <!-- Sniper-Turret -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Turret_SniperTurret"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>The verticular scaffolding within the barrel is replaced with a new synthetic glittertech material called BX3. Greatly decreases time between shots due to overheating, and improves the range a bit. Also, attach a bigger bucket to hold more shots.</description>
-              <costStuffCount>25</costStuffCount>
-              <costList>
-                <Plasteel>40</Plasteel>
-                <Synthread>50</Synthread>
-                <ComponentSpacer>1</ComponentSpacer>
-              </costList>
-              <workToUpgrade>7200</workToUpgrade>
-              <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
-              <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
-              <fuelCapacityFactor>1.5</fuelCapacityFactor>
-              <canForceAttack>true</canForceAttack>
-              <turretBurstCooldownTimeFactor>0.5</turretBurstCooldownTimeFactor>
-              <turretBurstWarmupTimeFactor>0.80</turretBurstWarmupTimeFactor>
-              <turretTopDrawSize>2.5</turretTopDrawSize>
-            </li>
-          </value>
-        </li>
-
-        <!-- Standard-Turret -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Turret_StandardTurret"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>Replace the turret's undercarriage armor with something the lads and ladies developed recently, called carbide-uraplast weave. This increases the durability of this device substantially, providing an ideal decoy for opponents. Further, it provides additional room for increased ammo storage.</description>
-              <costStuffCount>50</costStuffCount>
-              <costList>
-                <Steel>150</Steel>
-                <Plasteel>65</Plasteel>
-                <Uranium>25</Uranium>
-              </costList>
-              <workToUpgrade>7200</workToUpgrade>
-              <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
-              <statFactors>
-                <MaxHitPoints>5</MaxHitPoints>
-                <Flammability>0</Flammability>
-              </statFactors>
-              <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
-              <fuelCapacityFactor>1.5</fuelCapacityFactor>
-              <canForceAttack>true</canForceAttack>
-              <turretTopDrawSize>2.5</turretTopDrawSize>
-            </li>
-          </value>
-        </li>
-
-        <!-- Energy-Turret -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Turret_EnergyTurret"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>Install an Electroptic VC 2nd edition lens into the face of the energy turret to drastically increase the damage output, but lower the overall range. \n\nThe power requirement will be increased as well to offset the loss of efficiency in the change. In order to account for the increased heat, more durable armor has to be installed.</description>
-              <costList>
-                <Steel>100</Steel>
-                <Plasteel>45</Plasteel>
-                <ComponentSpacer>2</ComponentSpacer>
-              </costList>
-              <workToUpgrade>10000</workToUpgrade>
-              <turretGunDef>Gun_EnergyTurretUpgraded</turretGunDef>
-              <statFactors>
-                <MaxHitPoints>1.5</MaxHitPoints>
-              </statFactors>
-              <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
-              <basePowerConsumptionFactor>2</basePowerConsumptionFactor>
-              <canForceAttack>true</canForceAttack>
-              <turretTopDrawSize>2.5</turretTopDrawSize>
-            </li>
-          </value>
-        </li>
-
-        <!-- Heavy-Turret -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Turret_HeavyTurret"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>New magnetic coils with infused hyperweave greatly increases the range of each shot, but due to the power of each shot the minimum range is also greatly increased.</description>
-              <costList>
-                <Steel>100</Steel>
-                <Hyperweave>45</Hyperweave>
-                <ComponentIndustrial>6</ComponentIndustrial>
-              </costList>
-              <workToUpgrade>10000</workToUpgrade>
-              <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
-              <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
-              <turretGunDef>Gun_HeavyTurretUpgraded</turretGunDef>
-              <turretTopDrawSize>2.5</turretTopDrawSize>
-            </li>
-          </value>
-        </li>
-
-        <!-- Shredder-Turret -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Turret_ShredderTurret"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>Heavy barrel replacements increases the damage per shot, but slows the timing between them. As a result replacing the barrel is more expensive and the range of the turret is increased slightly.</description>
-              <costStuffCount>40</costStuffCount>
-              <costList>
-                <Steel>100</Steel>
-                <ComponentIndustrial>2</ComponentIndustrial>
-              </costList>
-              <workToUpgrade>9000</workToUpgrade>
-              <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
-              <fuelCapacityFactor>1.5</fuelCapacityFactor>
-              <fuelMultiplierFactor>1.4</fuelMultiplierFactor>
-              <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
-              <canForceAttack>true</canForceAttack>
-              <turretTopDrawSize>2.5</turretTopDrawSize>
-              <turretGunDef>Gun_ShredderTurretUpgraded</turretGunDef>
-            </li>
-          </value>
-        </li>
-
-        <!-- Concussive-Turret -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Turret_ConcussiveTurret"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>Exchange the barrel for an Urbworld Planetary Defense Munition Launcher. This increases the burst size to triple the original amount, increases the rate of fire, and increases the range a little. In exchange, each round is smaller and has less impact.</description>
-              <costStuffCount>250</costStuffCount>
-              <costList>
-                <Steel>400</Steel>
-                <Shell_HighExplosive>10</Shell_HighExplosive>
-                <ComponentSpacer>3</ComponentSpacer>
-              </costList>
-              <workToUpgrade>15000</workToUpgrade>
-              <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
-              <fuelCapacityFactor>1.5</fuelCapacityFactor>
-              <basePowerConsumptionFactor>1.25</basePowerConsumptionFactor>
-              <turretTopDrawSize>2.5</turretTopDrawSize>
-              <turretGunDef>Gun_ConcussiveTurretUpgraded</turretGunDef>
-            </li>
-          </value>
-        </li>
-
-        <!-- EMP-Turret -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Turret_STEMPTurret"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>Exchanging a few mechanical and electrical parts on the turret and massively increasing its power intake allows it to fire an insanely powerful and large EMP blast.</description>
-              <costStuffCount>200</costStuffCount>
-              <costList>
-                <Steel>120</Steel>
-                <Gold>25</Gold>
-                <ComponentIndustrial>6</ComponentIndustrial>
-              </costList>
-              <workToUpgrade>15000</workToUpgrade>
-              <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
-              <basePowerConsumptionFactor>2</basePowerConsumptionFactor>
-              <canForceAttack>true</canForceAttack>
-              <turretTopDrawSize>2.5</turretTopDrawSize>
-              <turretGunDef>Gun_EMPTurretUpgraded</turretGunDef>
-            </li>
-          </value>
-        </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_TazingTurret"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>Add a specialized AI for better target scanning and range, an upgraded injector turnshift for increased rate of fire, and double-baubled liquid converter for increased storage.</description>
+            <costStuffCount>25</costStuffCount>
+            <costList>
+              <Steel>50</Steel>
+              <MedicineIndustrial>4</MedicineIndustrial>
+              <ComponentIndustrial>3</ComponentIndustrial>
+            </costList>
+            <workToUpgrade>7200</workToUpgrade>
+            <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+            <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
+            <fuelCapacityFactor>2</fuelCapacityFactor>
+            <canForceAttack>true</canForceAttack>
+            <turretGunDef>Gun_TazingTurretUpgraded</turretGunDef>
+            <turretBurstCooldownTimeFactor>0.5</turretBurstCooldownTimeFactor>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+          </li>
+        </value>
+      </li>
 
 
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_SniperTurret"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>The verticular scaffolding within the barrel is replaced with a new synthetic glittertech material called BX3. Greatly decreases time between shots due to overheating, and improves the range a bit. Also, attach a bigger bucket to hold more shots.</description>
+            <costStuffCount>25</costStuffCount>
+            <costList>
+              <Plasteel>40</Plasteel>
+              <Synthread>50</Synthread>
+              <ComponentSpacer>1</ComponentSpacer>
+            </costList>
+            <workToUpgrade>7200</workToUpgrade>
+            <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+            <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
+            <fuelCapacityFactor>1.5</fuelCapacityFactor>
+            <canForceAttack>true</canForceAttack>
+            <turretBurstCooldownTimeFactor>0.5</turretBurstCooldownTimeFactor>
+            <turretBurstWarmupTimeFactor>0.80</turretBurstWarmupTimeFactor>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+          </li>
+        </value>
+      </li>
+
+      
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_StandardTurret"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>Replace the turret's undercarriage armor with something the lads and ladies developed recently, called carbide-uraplast weave. This increases the durability of this device substantially, providing an ideal decoy for opponents. Further, it provides additional room for increased ammo storage.</description>
+            <costStuffCount>50</costStuffCount>
+            <costList>
+              <Steel>150</Steel>
+              <Plasteel>65</Plasteel>
+              <Uranium>25</Uranium>
+            </costList>
+            <workToUpgrade>7200</workToUpgrade>
+            <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+            <statFactors>
+              <MaxHitPoints>5</MaxHitPoints>
+              <Flammability>0</Flammability>
+            </statFactors>
+            <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
+            <fuelCapacityFactor>1.5</fuelCapacityFactor>
+            <canForceAttack>true</canForceAttack>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+          </li>
+        </value>
+      </li>
+
+      
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_EnergyTurret"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>Install an Electroptic VC 2nd edition lens into the face of the energy turret to drastically increase the damage output, but lower the overall range. \n\nThe power requirement will be increased as well to offset the loss of efficiency in the change. In order to account for the increased heat, more durable armor has to be installed.</description>
+            <costList>
+              <Steel>100</Steel>
+              <Plasteel>45</Plasteel>
+              <ComponentSpacer>2</ComponentSpacer>
+            </costList>
+            <workToUpgrade>10000</workToUpgrade>
+            <turretGunDef>Gun_EnergyTurretUpgraded</turretGunDef>
+            <statFactors>
+              <MaxHitPoints>1.5</MaxHitPoints>
+            </statFactors>
+            <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+            <basePowerConsumptionFactor>2</basePowerConsumptionFactor>
+            <canForceAttack>true</canForceAttack>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+          </li>
+        </value>
+      </li>
+
+      
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_HeavyTurret"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>New magnetic coils with infused hyperweave greatly increases the range of each shot, but due to the power of each shot the minimum range is also greatly increased.</description>
+            <costList>
+              <Steel>100</Steel>
+              <Hyperweave>45</Hyperweave>
+              <ComponentIndustrial>6</ComponentIndustrial>
+            </costList>
+            <workToUpgrade>10000</workToUpgrade>
+            <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+            <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
+            <turretGunDef>Gun_HeavyTurretUpgraded</turretGunDef>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+          </li>
+        </value>
+      </li>
+
+      
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_ShredderTurret"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>Heavy barrel replacements increases the damage per shot, but slows the timing between them. As a result replacing the barrel is more expensive and the range of the turret is increased slightly.</description>
+            <costStuffCount>40</costStuffCount>
+            <costList>
+              <Steel>100</Steel>
+              <ComponentIndustrial>2</ComponentIndustrial>
+            </costList>
+            <workToUpgrade>9000</workToUpgrade>
+            <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+            <fuelCapacityFactor>1.5</fuelCapacityFactor>
+            <fuelMultiplierFactor>1.4</fuelMultiplierFactor>
+            <basePowerConsumptionFactor>1.1</basePowerConsumptionFactor>
+            <canForceAttack>true</canForceAttack>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+            <turretGunDef>Gun_ShredderTurretUpgraded</turretGunDef>
+          </li>
+        </value>
+      </li>
+
+      
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_ConcussiveTurret"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>Exchange the barrel for an Urbworld Planetary Defense Munition Launcher. This increases the burst size to triple the original amount, increases the rate of fire, and increases the range a little. In exchange, each round is smaller and has less impact.</description>
+            <costStuffCount>250</costStuffCount>
+            <costList>
+              <Steel>400</Steel>
+              <Shell_HighExplosive>10</Shell_HighExplosive>
+              <ComponentSpacer>3</ComponentSpacer>
+            </costList>
+            <workToUpgrade>15000</workToUpgrade>
+            <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+            <fuelCapacityFactor>1.5</fuelCapacityFactor>
+            <basePowerConsumptionFactor>1.25</basePowerConsumptionFactor>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+            <turretGunDef>Gun_ConcussiveTurretUpgraded</turretGunDef>
+          </li>
+        </value>
+      </li>
+
+      
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_STEMPTurret"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>Exchanging a few mechanical and electrical parts on the turret and massively increasing its power intake allows it to fire an insanely powerful and large EMP blast.</description>
+            <costStuffCount>200</costStuffCount>
+            <costList>
+              <Steel>120</Steel>
+              <Gold>25</Gold>
+              <ComponentIndustrial>6</ComponentIndustrial>
+            </costList>
+            <workToUpgrade>15000</workToUpgrade>
+            <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+            <basePowerConsumptionFactor>2</basePowerConsumptionFactor>
+            <canForceAttack>true</canForceAttack>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+            <turretGunDef>Gun_EMPTurretUpgraded</turretGunDef>
+          </li>
+        </value>
+      </li>
 
 
 
@@ -224,79 +221,78 @@
 
 
 
-        <!-- Rifle Emplacement -->
-        <li Class="PatchOperationAddModExtension">
-          <xpath>/Defs/ThingDef[defName="Turret_STRifleEmp"]</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>Improve the rifle's accuracy, descreases the time between shots, and enforces the durability of the emplacement.</description>
-              <costList>
-                <ComponentIndustrial>1</ComponentIndustrial>
-                <Steel>80</Steel>
-              </costList>
-              <workToUpgrade>4200</workToUpgrade>
-              <researchPrerequisites>
-                <li>Gunsmithing</li>
-              </researchPrerequisites>
-              <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
-              <statFactors>
-                <MaxHitPoints>1.5</MaxHitPoints>
-              </statFactors>
-              <statOffsets>
-                <ShootingAccuracyTurret>0.03</ShootingAccuracyTurret>
-              </statOffsets>
-              <turretBurstWarmupTimeFactor>0.5</turretBurstWarmupTimeFactor>
-            </li>
-          </value>
-        </li>
-
-        <li Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName="Turret_STRifleEmp"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.TurretFrameworkExtension">
-              <useManningPawnShootingAccuracy>true</useManningPawnShootingAccuracy>
-              <useManningPawnAimingDelayFactor>true</useManningPawnAimingDelayFactor>
-            </li>
-          </value>
-        </li>
 
 
+      <li Class="PatchOperationAddModExtension">
+        <xpath>/Defs/ThingDef[defName="Turret_STRifleEmp"]</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>Improve the rifle's accuracy, descreases the time between shots, and enforces the durability of the emplacement.</description>
+            <costList>
+              <ComponentIndustrial>1</ComponentIndustrial>
+              <Steel>80</Steel>
+            </costList>
+            <workToUpgrade>4200</workToUpgrade>
+            <researchPrerequisites>
+              <li>Gunsmithing</li>
+            </researchPrerequisites>
+            <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+            <statFactors>
+              <MaxHitPoints>1.5</MaxHitPoints>
+            </statFactors>
+            <statOffsets>
+              <ShootingAccuracyTurret>0.03</ShootingAccuracyTurret>
+            </statOffsets>
+            <turretBurstWarmupTimeFactor>0.5</turretBurstWarmupTimeFactor>
+          </li>
+        </value>
+      </li>
 
-        <!-- MG Emplacement -->
-        <li Class="PatchOperationAddModExtension">
-          <xpath>/Defs/ThingDef[defName="Turret_STMGEmp"]</xpath>
-          <value>
-            <li Class="TurretExtensions.CompProperties_Upgradable">
-              <description>Improve the MG's rate of fire, firing cooldown, and durability of the emplacement.</description>
-              <costList>
-                <ComponentIndustrial>1</ComponentIndustrial>
-                <Steel>80</Steel>
-              </costList>
-              <workToUpgrade>4200</workToUpgrade>
-              <researchPrerequisites>
-                <li>GasOperation</li>
-              </researchPrerequisites>
-              <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
-              <statFactors>
-                <MaxHitPoints>1.5</MaxHitPoints>
-              </statFactors>
-              <turretBurstWarmupTimeFactor>0.5</turretBurstWarmupTimeFactor>
-              <turretBurstCooldownTimeFactor>0.25</turretBurstCooldownTimeFactor>
-            </li>
-          </value>
-        </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_STRifleEmp"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.TurretFrameworkExtension">
+            <useManningPawnShootingAccuracy>true</useManningPawnShootingAccuracy>
+            <useManningPawnAimingDelayFactor>true</useManningPawnAimingDelayFactor>
+          </li>
+        </value>
+      </li>
 
-        <li Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName="Turret_STMGEmp"]/comps</xpath>
-          <value>
-            <li Class="TurretExtensions.TurretFrameworkExtension">
-              <useManningPawnShootingAccuracy>true</useManningPawnShootingAccuracy>
-              <useManningPawnAimingDelayFactor>true</useManningPawnAimingDelayFactor>
-            </li>
-          </value>
-        </li>
-      </operations>
-    </match>
-  </Operation>
+
+
+      <li Class="PatchOperationAddModExtension">
+        <xpath>/Defs/ThingDef[defName="Turret_STMGEmp"]</xpath>
+        <value>
+          <li Class="TurretExtensions.CompProperties_Upgradable">
+            <description>Improve the MG's rate of fire, firing cooldown, and durability of the emplacement.</description>
+            <costList>
+              <ComponentIndustrial>1</ComponentIndustrial>
+              <Steel>80</Steel>
+            </costList>
+            <workToUpgrade>4200</workToUpgrade>
+            <researchPrerequisites>
+              <li>GasOperation</li>
+            </researchPrerequisites>
+            <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+            <statFactors>
+              <MaxHitPoints>1.5</MaxHitPoints>
+            </statFactors>
+            <turretBurstWarmupTimeFactor>0.5</turretBurstWarmupTimeFactor>
+            <turretBurstCooldownTimeFactor>0.25</turretBurstCooldownTimeFactor>
+          </li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Turret_STMGEmp"]/comps</xpath>
+        <value>
+          <li Class="TurretExtensions.TurretFrameworkExtension">
+            <useManningPawnShootingAccuracy>true</useManningPawnShootingAccuracy>
+            <useManningPawnAimingDelayFactor>true</useManningPawnAimingDelayFactor>
+          </li>
+        </value>
+      </li>
+    </operations>
+  </Operation> -->
 
 </Patch>
