@@ -117,7 +117,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
-    <menuHidden>true</menuHidden>
+      
     <destroyOnDrop>true</destroyOnDrop>
     <tradeability>None</tradeability>
     <useHitPoints>false</useHitPoints>
@@ -158,7 +158,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
-    <menuHidden>true</menuHidden>
+      
     <destroyOnDrop>true</destroyOnDrop>
     <tradeability>None</tradeability>
     <useHitPoints>false</useHitPoints>
@@ -313,7 +313,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
-    <menuHidden>true</menuHidden>
+      
     <destroyOnDrop>true</destroyOnDrop>
     <tradeability>None</tradeability>
     <useHitPoints>false</useHitPoints>
@@ -354,7 +354,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
-    <menuHidden>true</menuHidden>
+      
     <destroyOnDrop>true</destroyOnDrop>
     <tradeability>None</tradeability>
     <useHitPoints>false</useHitPoints>

@@ -87,7 +87,7 @@
         <texPath>RifleEmplacement_Top</texPath>
         <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <menuHidden>true</menuHidden>
+     
     <description>Bolt-action rifle mounted on top of a solid object.</description>
     <soundInteract>Interact_Rifle</soundInteract>
     <tradeability>None</tradeability>
@@ -212,7 +212,7 @@
         <texPath>MGEmplacement_Top</texPath>
         <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <menuHidden>true</menuHidden>
+     
     <description>Machine gun mounted on top of a solid object.</description>
     <soundInteract>Interact_Rifle</soundInteract>
     <tradeability>None</tradeability>
