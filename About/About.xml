@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Simple Turrets</name>
-  <author>Neceros</author>
+  <name>Simple Turrets - Forked (Update to 1.3)</name>
+  <author>pnelego</author>
   <supportedVersions>
     <li>1.1</li>
     <li>1.2</li>
     <li>1.3</li>
   </supportedVersions>
-  <packageId>neceros.simpleturrets</packageId>
-  <description>Adds several unique turrets (and 2 manned emplacements) all meticulously designed for vanilla Rimworld, each with a specific role in mind. Three additional research projects are provided for the turrets. All turrets are reinstallable, while the emplacements are not.
+  <packageId>pnelego.simpleturretsforked</packageId>
+  <url> https://github.com/wyatthuckaby/SimpleTurrets </url>
+  <description>
+Original Mod By Neceros!!!
+
+Link To Original mod.
+https://steamcommunity.com/sharedfiles/filedetails/?id=1790155285&searchtext=Simple+Turrets
+
+Minor patch to 1.3 by pnelego
+  
+Adds several unique turrets (and 2 manned emplacements) all meticulously designed for vanilla Rimworld, each with a specific role in mind. Three additional research projects are provided for the turrets. All turrets are reinstallable, while the emplacements are not.
 
 Add it to an existing save. It will work just fine. Won't conflict with any other mods.
+
 
 </description>
 </ModMetaData>
